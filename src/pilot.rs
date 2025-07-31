@@ -132,7 +132,7 @@ pub fn fetch_flights(pilot_id: u64, key: &String) -> Result<Vec<Flight>, PilotEr
 
 #[allow(dead_code)]
 pub fn flight_summary(flight: &Flight) -> String {
-    let duration_str = &flight.duration;
+    let duration_str: &String = &flight.duration;
     let duration_parsed = Duration::parse(duration_str).unwrap();
     let std_duration = duration_parsed.to_std().unwrap_or(std::time::Duration::from_secs(0));
 
